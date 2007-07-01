@@ -1,13 +1,12 @@
 Summary:	The SAGrey plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-SAGrey
 Version:	0.02
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Apache License
 Group:		Development/Perl
 URL:		http://www.ntrg.com/misc/sagrey/
-Source0:	http://www.ntrg.com/misc/sagrey/sagrey.cf.bz2
-Source1:	http://www.ntrg.com/misc/sagrey/sagrey.pm.bz2
-Patch0:		SAGrey-fix-module-path.patch
+Source0:	http://www.ntrg.com/misc/sagrey/sagrey.cf
+Source1:	http://www.ntrg.com/misc/sagrey/sagrey.pm
 Requires(pre): rpm-helper
 Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
@@ -44,10 +43,11 @@ other models (such as delivery routines).
 
 %setup -q -T -c -n %{name}-%{version}
 
-bzcat %{SOURCE0} > SAGrey.cf
-bzcat %{SOURCE1} > SAGrey.pm
+cp %{SOURCE0} SAGrey.cf
+cp %{SOURCE1} SAGrey.pm
 
-%patch0
+# fix path
+perl -pi -e "s|sagrey\.pm|%{perl_vendorlib}/Mail/SpamAssassin/Plugin/SAGrey\.pm|g" SAGrey.cf
 
 %build
 
@@ -79,5 +79,3 @@ fi
 %defattr(644,root,root,755)
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/mail/spamassassin/SAGrey.cf
 %{perl_vendorlib}/Mail/SpamAssassin/Plugin/SAGrey.pm
-
-
