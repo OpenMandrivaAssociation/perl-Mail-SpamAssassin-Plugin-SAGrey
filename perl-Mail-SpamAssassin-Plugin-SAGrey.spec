@@ -12,7 +12,6 @@ Requires(postun): rpm-helper
 Requires(pre):  spamassassin-spamd >= 3.1.1
 Requires:	spamassassin-spamd >= 3.1.1
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 Mail::SpamAssassin::Plugin::SAGrey is a SpamAssassin plugin that provides a
