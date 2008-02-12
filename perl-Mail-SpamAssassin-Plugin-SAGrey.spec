@@ -31,13 +31,13 @@ greylisting functions (EG, having your delivery or transfer agent defer
 delivery), or the score by itself can be used to penalize the message.
 This model has two benefits over MTA-specific greylisting mechanisms: first, it
 only subjects probable-spam to greylisting (instead of making everybody be
-deferred, which has known problems), and it repurposes the existing spamassassin
-history database (meaning no additional databases need to be maintained).
-Another benefit is that it can still work at the MTA level if your MTA can call
-spamassassin while the transfer is active and then defer delivery based on the
-presence of header-field data (postfix 2.x will not do this unfortunately,
-since the header checks don't provide a DEFER verb), but can also be used in
-other models (such as delivery routines).
+deferred, which has known problems), and it repurposes the existing
+spamassassin history database (meaning no additional databases need to be
+maintained).  Another benefit is that it can still work at the MTA level if
+your MTA can call spamassassin while the transfer is active and then defer
+delivery based on the presence of header-field data (postfix 2.x will not do
+this unfortunately, since the header checks don't provide a DEFER verb), but
+can also be used in other models (such as delivery routines).
 
 %prep
 
