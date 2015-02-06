@@ -1,7 +1,7 @@
 Summary:	The SAGrey plugin for SpamAssassin
 Name:		perl-Mail-SpamAssassin-Plugin-SAGrey
 Version:	0.02
-Release:	5
+Release:	6
 License:	Apache License
 Group:		Development/Perl
 URL:		http://www.ntrg.com/misc/sagrey/
