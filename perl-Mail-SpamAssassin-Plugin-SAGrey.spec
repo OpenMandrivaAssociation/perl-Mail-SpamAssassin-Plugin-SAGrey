@@ -4,7 +4,7 @@ Version:	0.02
 Release:	6
 License:	Apache License
 Group:		Development/Perl
-URL:		http://www.ntrg.com/misc/sagrey/
+URL:		https://www.ntrg.com/misc/sagrey/
 Source0:	http://www.ntrg.com/misc/sagrey/sagrey.cf
 Source1:	http://www.ntrg.com/misc/sagrey/sagrey.pm
 Requires(pre): rpm-helper
